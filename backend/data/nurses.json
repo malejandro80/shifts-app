@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Mary",
+    "lastName": "Jane",
+    "userName": "mjane",
+    "qualification": "CNA"
+  },
+  {
+    "id": 2,
+    "name": "Wonder ",
+    "lastName": "Woman",
+    "userName": "wwoman",
+    "qualification": "LPN"
+  },
+  {
+    "id": 3,
+    "name": "Harley",
+    "lastName": "Quinn",
+    "userName": "hquinn",
+    "qualification": "RN"
+  }
+]
