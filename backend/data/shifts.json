@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "name": "sfift 1",
     "initDate": 1666471987318,
     "endDate": 1666472022817,
     "nurseId": 1,
@@ -8,6 +9,7 @@
   },
   {
     "id": 2,
+    "name": "sfift 2",
     "initDate": 1666471987318,
     "endDate": 1666472022817,
     "nurseId": 1,
@@ -15,6 +17,7 @@
   },
   {
     "id": 3,
+    "name": "sfift 3",
     "initDate": 1666471987318,
     "endDate": 1666472022817,
     "nurseId": null,
