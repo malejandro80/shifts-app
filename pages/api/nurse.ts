@@ -10,7 +10,7 @@ const handler = nc()
   // express like routing for methods
   .get((req, res) => {
     const nurses = getNurses()
-    res.send(nurses)
+    res.send({ data: nurses })
   })
 
 export default handler

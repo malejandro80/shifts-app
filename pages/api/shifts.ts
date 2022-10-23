@@ -10,7 +10,7 @@ const handler = nc()
   // express like routing for methods
   .get((req, res) => {
     const shifts = getShifts()
-    res.send(shifts)
+    res.send({ data: shifts })
   })
   .put(async (req, res) => {
     res.end('Hola Amigos')
