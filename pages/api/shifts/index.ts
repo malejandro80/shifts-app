@@ -2,7 +2,7 @@
 
 import nc from 'next-connect'
 import cors from 'cors'
-import { getShifts, updateShift } from '../../backend/shifts/shifts.service'
+import { getShifts, updateShift } from '../../../backend/shifts/shifts.service'
 
 const handler = nc()
   // use connect based middleware
@@ -11,10 +11,6 @@ const handler = nc()
   .get((req, res) => {
     const shifts = getShifts()
     res.send({ data: shifts })
-  })
-  .put(async (req, res) => {
-    const updatedShift = updateShift(3, { nurseId: 2 })
-    res.send({ data: updatedShift })
   })
 
 export default handler
