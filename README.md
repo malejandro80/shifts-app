@@ -15,5 +15,3 @@ PUT /shifts/${shift_id} => body = {nurseId : 1}
 4. the handling of all the routes is done from the pages folder.
 
 5. the JSON files located in backend/data do the database work.
-
-Translated with www.DeepL.com/Translator (free version)
