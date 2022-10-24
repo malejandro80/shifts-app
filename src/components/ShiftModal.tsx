@@ -8,6 +8,7 @@ import Modal from '@mui/material/Modal'
 import styles from '../../styles/modal.module.css'
 import Dropdown from './Dropdown'
 import { useHandleShift } from '../hooks/useHandleShift'
+import { ModalErrors } from './modalErrors'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -54,12 +55,7 @@ export default function ShiftModal() {
               Save Assignment
             </Button>
           </div>
-          {errors.map(e => (
-            <div key={e}>
-              <span>{e}</span>
-              <br />
-            </div>
-          ))}
+          <ModalErrors errors={errors} />
         </Box>
       </Modal>
     </div>
