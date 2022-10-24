@@ -26,7 +26,7 @@ export default function ShiftModal() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const { onChangeValue, shifts, nurses, lockSaveButton, updateShift, errors } =
-    useHandleShift(setOpen)
+    useHandleShift(setOpen, open)
   return (
     <div>
       <Button onClick={handleOpen} className={`${styles.modalButton}`}>

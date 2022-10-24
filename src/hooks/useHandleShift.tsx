@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateShifts } from '../redux/actions'
 import { useValidate } from './useValidate'
 
-export const useHandleShift = handleModal => {
+export const useHandleShift = (handleModal, modalState) => {
   const dispatch = useDispatch()
   const shifts = useSelector(store => store.shifts.shifts)
   const nurses = useSelector(store => store.nurses.nurses)
@@ -14,7 +14,13 @@ export const useHandleShift = handleModal => {
   const [selectedShift, setSelectedShift] = useState(null)
   const [selectedNurse, setSelectedNurse] = useState(null)
 
-  const { errors } = useValidate(
+  useEffect(() => {
+    if (!modalState && (selectedShift !== null || selectedNurse !== null)) {
+      cleanModal()
+    }
+  }, [modalState])
+
+  const { errors, setErrors } = useValidate(
     selectedNurse,
     selectedShift,
     setLockSaveButton
@@ -30,6 +36,12 @@ export const useHandleShift = handleModal => {
     }
   }
 
+  const cleanModal = () => {
+    setSelectedNurse(null)
+    setSelectedShift(null)
+    setErrors([])
+  }
+
   const updateShift = async () => {
     const updatedShift = await updateShiftReq(selectedShift, {
       nurseId: selectedNurse
@@ -38,6 +50,15 @@ export const useHandleShift = handleModal => {
     dispatch(updateShifts(updatedShift))
 
     handleModal(false)
+    cleanModal()
   }
-  return { onChangeValue, shifts, nurses, lockSaveButton, updateShift, errors }
+  return {
+    onChangeValue,
+    shifts,
+    nurses,
+    lockSaveButton,
+    updateShift,
+    errors,
+    cleanModal
+  }
 }

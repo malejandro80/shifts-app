@@ -54,7 +54,9 @@ export default function ShiftsTable() {
                 <TableCell align='right'>
                   {moment(s.endDate).format('M/D/YYYY h:mm:ss a')}
                 </TableCell>
-                <TableCell align='right'>{s.qualification}</TableCell>
+                <TableCell align='right'>
+                  {transformQualification(s.qualification)}
+                </TableCell>
                 <TableCell align='right'>
                   {s.nurse
                     ? `${s.nurse?.name} ${

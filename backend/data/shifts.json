@@ -1,26 +1,50 @@
 [
-  {
-    "id": 1,
-    "name": "shift 1",
-    "initDate": 1666616400000,
-    "endDate": 1666630800000,
-    "nurseId": 2,
-    "qualification": 1
-  },
-  {
-    "id": 2,
-    "name": "shift 2",
-    "initDate": 1666634400000,
-    "endDate": 1666659600000,
-    "nurseId": 2,
-    "qualification": 2
-  },
-  {
-    "id": 3,
-    "name": "shift 3",
-    "initDate": 1666648800000,
-    "endDate": 1666670400000,
-    "nurseId": 1,
-    "qualification": 3
-  }
+    {
+        "id": 1,
+        "name": "shift 1",
+        "initDate": 1666616400000,
+        "endDate": 1666630800000,
+        "nurseId": 2,
+        "qualification": 1
+    },
+    {
+        "id": 2,
+        "name": "shift 2",
+        "initDate": 1666634400000,
+        "endDate": 1666659600000,
+        "nurseId": 2,
+        "qualification": 2
+    },
+    {
+        "id": 3,
+        "name": "shift 3",
+        "initDate": 1666648800000,
+        "endDate": 1666670400000,
+        "nurseId": 1,
+        "qualification": 3
+    },
+    {
+        "id": 4,
+        "name": "shift 4",
+        "initDate": 1666648800000,
+        "endDate": 1666670400000,
+        "nurseId": null,
+        "qualification": 2
+    },
+    {
+        "id": 5,
+        "name": "shift 5",
+        "initDate": 1666663200000,
+        "endDate": 1666670400000,
+        "nurseId": null,
+        "qualification": 2
+    },
+    {
+        "id": 6,
+        "name": "shift 6",
+        "initDate": 1666659600000,
+        "endDate": 1666670400000,
+        "nurseId": null,
+        "qualification": 2
+    }
 ]
