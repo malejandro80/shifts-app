@@ -13,10 +13,10 @@ export const useHandleShift = handleModal => {
   const [lockSaveButton, setLockSaveButton] = useState(true)
   const [selectedShift, setSelectedShift] = useState(null)
   const [selectedNurse, setSelectedNurse] = useState(null)
+  const [errors, setErrors] = useState([])
 
   const onChangeValue = e => {
     const { name, value } = e.target
-    console.log(name, value)
     if (name === 'shift') {
       setSelectedShift(value)
       setLockSaveButton(false)
@@ -24,6 +24,22 @@ export const useHandleShift = handleModal => {
       setSelectedNurse(value)
     }
   }
+
+  const ValidateRange = () => {
+    if (!selectedShift || !selectedNurse) return
+
+    const shiftQualification = shifts.find(
+      s => s.id === selectedShift
+    ).qualification
+    const nurseQualification = shifts.find(
+      s => s.id === selectedNurse
+    ).qualification
+    console.log(shiftQualification, nurseQualification)
+    if (shiftQualification < nurseQualification) {
+      alert('not valid')
+    }
+  }
+
   const updateShift = async () => {
     const updatedShift = await updateShiftReq(selectedShift, {
       nurseId: selectedNurse
@@ -33,5 +49,5 @@ export const useHandleShift = handleModal => {
 
     handleModal(false)
   }
-  return { onChangeValue, shifts, nurses, lockSaveButton, updateShift }
+  return { onChangeValue, shifts, nurses, lockSaveButton, updateShift, errors }
 }

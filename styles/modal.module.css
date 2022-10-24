@@ -9,3 +9,7 @@
   background-color: white;
   border: solid 1px #3c4ad3;
 }
+
+.saveButton {
+  align-self: center;
+}

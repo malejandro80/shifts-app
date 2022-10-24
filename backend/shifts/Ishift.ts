@@ -6,5 +6,5 @@ export interface Ishift {
   initDate: number
   endDate: number
   nurseId: number | null
-  qualification: string
+  qualification: number
 }

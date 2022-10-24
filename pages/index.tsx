@@ -8,7 +8,6 @@ import ShiftsTable from '../src/components/ShiftsTable'
 import { getNurses } from '../src/services/nurses.service'
 import { getShifts } from '../src/services/shifts.service'
 import styles from '../styles/Home.module.css'
-import { AppDataProvider } from '../src/context/AppDataProvider'
 import { useEffect } from 'react'
 import { setShifts, setNurses } from '../src/redux/actions'
 
@@ -20,11 +19,9 @@ const Home: NextPage = props => {
   }, [])
   return (
     <>
-      <AppDataProvider nurses={props.nurses} shifts={props.shifts}>
-        <div className='main-container'>
-          <ShiftsTable />
-        </div>
-      </AppDataProvider>
+      <div className='main-container'>
+        <ShiftsTable />
+      </div>
     </>
   )
 }

@@ -5,5 +5,5 @@ export interface Inurse {
   name: string
   lastName: string
   userName: string
-  qualification: string
+  qualification: number
 }

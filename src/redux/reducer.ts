@@ -10,7 +10,6 @@ const shiftsReducer = (state = initialState, { type, payload }) => {
     case types.SET_SHIFTS:
       return { ...state, shifts: payload }
     case types.UPDATE_SHIFTS:
-      console.log(payload, 'payload')
       const updateShifts = state.shifts.map(s =>
         s.id === payload.id ? payload : s
       )

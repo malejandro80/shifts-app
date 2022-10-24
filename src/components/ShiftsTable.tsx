@@ -8,9 +8,13 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
-import { matchShiftWithNurses } from '../services/utils.service'
+import {
+  matchShiftWithNurses,
+  transformQualification
+} from '../services/utils.service'
 import ShiftModal from './ShiftModal'
 import { useSelector } from 'react-redux'
+import moment from 'moment'
 
 export default function ShiftsTable() {
   const shifts = useSelector(store => store.shifts.shifts)
@@ -44,12 +48,18 @@ export default function ShiftsTable() {
                 <TableCell component='th' scope='row'>
                   {s.name}
                 </TableCell>
-                <TableCell align='right'>{s.initDate}</TableCell>
-                <TableCell align='right'>{s.endDate}</TableCell>
+                <TableCell align='right'>
+                  {moment(s.initDate).format('M/D/YYYY h:mm:ss a')}
+                </TableCell>
+                <TableCell align='right'>
+                  {moment(s.endDate).format('M/D/YYYY h:mm:ss a')}
+                </TableCell>
                 <TableCell align='right'>{s.qualification}</TableCell>
                 <TableCell align='right'>
                   {s.nurse
-                    ? `${s.nurse?.name} ${s.nurse?.lastName} (${s.nurse?.qualification})`
+                    ? `${s.nurse?.name} ${
+                        s.nurse?.lastName
+                      } (${transformQualification(s.nurse?.qualification)})`
                     : ''}
                 </TableCell>
               </TableRow>
