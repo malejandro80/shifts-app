@@ -3,14 +3,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import ShiftsTable from '../components/ShiftsTable'
-import { getNurses } from '../services/nurses.service'
-import { getShifts } from '../services/shifts.service'
+import ShiftsTable from '../src/components/ShiftsTable'
+import { getNurses } from '../src/services/nurses.service'
+import { getShifts } from '../src/services/shifts.service'
 import styles from '../styles/Home.module.css'
-import { AppDataProvider } from '../context/AppDataProvider'
+import { AppDataProvider } from '../src/context/AppDataProvider'
 
 const Home: NextPage = props => {
-  console.log(props)
   return (
     <>
       <AppDataProvider nurses={props.nurses} shifts={props.shifts}>

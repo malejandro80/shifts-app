@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { AppDataContext } from '../context/AppDataProvider'
 import { matchShiftWithNurses } from '../services/utils.service'
+import ShiftModal from './ShiftModal'
 
 export default function ShiftsTable() {
   const context = React.useContext(AppDataContext)
@@ -17,7 +18,10 @@ export default function ShiftsTable() {
   const mathedShifts = matchShiftWithNurses(context.shifts, context.nurses)
   return (
     <>
-      <h1>table</h1>
+      <div className='shift-table__header'>
+        <h1>table</h1>
+        <ShiftModal />
+      </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size='small' aria-label='a dense table'>
           <TableHead>

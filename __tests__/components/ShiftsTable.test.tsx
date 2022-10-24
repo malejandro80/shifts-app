@@ -1,7 +1,7 @@
 /** @format */
 
 import { render, screen } from '@testing-library/react'
-import ShiftsTable from '../../components/ShiftsTable'
+import ShiftsTable from '../../src/components/ShiftsTable'
 
 beforeEach(() => {
   render(<ShiftsTable />)

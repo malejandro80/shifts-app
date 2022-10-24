@@ -1,6 +1,6 @@
 /** @format */
 
-import { matchShiftWithNurses } from '../../services/utils.service'
+import { matchShiftWithNurses } from '../../src/services/utils.service'
 
 const nurses = [
   {

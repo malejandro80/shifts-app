@@ -1,6 +1,6 @@
 /** @format */
 
-import { getNurses } from '../../services/nurses.service'
+import { getNurses } from '../../src/services/nurses.service'
 
 jest.mock('../../services/nurses.service.ts')
 let shifts: Promise | null = null

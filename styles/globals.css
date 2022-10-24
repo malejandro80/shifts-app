@@ -18,3 +18,9 @@ a {
 .main-container {
   margin: 5rem;
 }
+
+.shift-table__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

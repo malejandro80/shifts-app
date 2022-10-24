@@ -1,0 +1,11 @@
+/** @format */
+
+.modalButton {
+  background-color: #3c4ad3;
+  color: white;
+}
+.modalButton:hover {
+  color: #3c4ad3;
+  background-color: white;
+  border: solid 1px #3c4ad3;
+}
