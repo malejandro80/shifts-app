@@ -25,7 +25,8 @@ export default function ShiftModal() {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const { onChangeValue, shifts, nurses, lockSaveButton } = useHandleShift()
+  const { onChangeValue, shifts, nurses, lockSaveButton, updateShift } =
+    useHandleShift(setOpen)
   return (
     <div>
       <Button onClick={handleOpen} className={`${styles.modalButton}`}>
@@ -44,7 +45,9 @@ export default function ShiftModal() {
           <div>
             <Dropdown onChange={onChangeValue} name={'shift'} data={shifts} />
             <Dropdown onChange={onChangeValue} name={'nurses'} data={nurses} />
-            <button disabled={lockSaveButton}>ghola</button>
+            <button disabled={lockSaveButton} onClick={updateShift}>
+              ghola
+            </button>
           </div>
           {/* <Typography id='modal-modal-description' sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.

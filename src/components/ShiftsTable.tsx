@@ -8,22 +8,24 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
-import { AppDataContext } from '../context/AppDataProvider'
 import { matchShiftWithNurses } from '../services/utils.service'
 import ShiftModal from './ShiftModal'
+import { useSelector } from 'react-redux'
 
 export default function ShiftsTable() {
-  const context = React.useContext(AppDataContext)
+  const shifts = useSelector(store => store.shifts.shifts)
+  const nurses = useSelector(store => store.nurses.nurses)
+  const mathedShifts = matchShiftWithNurses(shifts, nurses)
 
-  const mathedShifts = matchShiftWithNurses(context.shifts, context.nurses)
   return (
     <>
       <div className='shift-table__header'>
         <h1>table</h1>
         <ShiftModal />
       </div>
+
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size='small' aria-label='a dense table'>
+        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
           <TableHead>
             <TableRow>
               <TableCell>Shift</TableCell>

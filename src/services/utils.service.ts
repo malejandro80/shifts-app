@@ -1,10 +1,11 @@
 /** @format */
 export const matchShiftWithNurses = (shifts, nurses) => {
   return shifts.map(s => {
-    let nurse = null
-    if (s.nurseId !== null) {
-      nurse = nurses.find(n => n.id === s.id)
+    if (s.nurseId === null) {
+      return s
     }
+    let nurse = nurses.find(n => n.id === s.nurseId)
+
     return { ...s, nurse }
   })
 }
