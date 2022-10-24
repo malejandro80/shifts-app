@@ -55,10 +55,10 @@ export default function ShiftModal() {
             </Button>
           </div>
           {errors.map(e => (
-            <>
+            <div key={e}>
               <span>{e}</span>
               <br />
-            </>
+            </div>
           ))}
         </Box>
       </Modal>
