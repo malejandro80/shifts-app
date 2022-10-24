@@ -2,7 +2,7 @@
 
 import { getNurses } from '../../src/services/nurses.service'
 
-jest.mock('../../services/nurses.service.ts')
+jest.mock('../../src/services/nurses.service.ts')
 let shifts: Promise | null = null
 const nurse = {
   id: 1,

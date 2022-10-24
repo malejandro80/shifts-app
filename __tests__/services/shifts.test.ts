@@ -2,7 +2,7 @@
 
 import { getShifts } from '../../src/services/shifts.service'
 
-jest.mock('../../services/shifts.service.ts')
+jest.mock('../../src/services/shifts.service.ts')
 let shifts: Promise | null = null
 
 beforeEach(async () => {
