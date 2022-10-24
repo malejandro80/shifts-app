@@ -8,9 +8,9 @@ this is a shift management application for nurses.
 
 3. the endpoint paths are as follows
 
-GET /shifts
-GET /nurse
-PUT /shifts/${shift_id} => body = {nurseId : 1}
+- GET /shifts
+- GET /nurse
+- PUT /shifts/${shift_id} => body = {nurseId : 1}
 
 4. the handling of all the routes is done from the pages folder.
 
