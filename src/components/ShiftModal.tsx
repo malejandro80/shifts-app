@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import styles from '../../styles/modal.module.css'
 import Dropdown from './Dropdown'
+import { useHandleShift } from '../hooks/useHandleShift'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -24,7 +25,7 @@ export default function ShiftModal() {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-
+  const { onChangeValue, shifts, nurses, lockSaveButton } = useHandleShift()
   return (
     <div>
       <Button onClick={handleOpen} className={`${styles.modalButton}`}>
@@ -41,9 +42,9 @@ export default function ShiftModal() {
             Set Shift Assignment
           </Typography>
           <div>
-            <Dropdown />
-            <Dropdown />
-            <button>ghola</button>
+            <Dropdown onChange={onChangeValue} name={'shift'} data={shifts} />
+            <Dropdown onChange={onChangeValue} name={'nurses'} data={nurses} />
+            <button disabled={lockSaveButton}>ghola</button>
           </div>
           {/* <Typography id='modal-modal-description' sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.

@@ -1,26 +1,26 @@
 [
-  {
-    "id": 1,
-    "name": "sfift 1",
-    "initDate": 1666471987318,
-    "endDate": 1666472022817,
-    "nurseId": 1,
-    "qualification": "CNA"
-  },
-  {
-    "id": 2,
-    "name": "sfift 2",
-    "initDate": 1666471987318,
-    "endDate": 1666472022817,
-    "nurseId": 1,
-    "qualification": "RN"
-  },
-  {
-    "id": 3,
-    "name": "sfift 3",
-    "initDate": 1666471987318,
-    "endDate": 1666472022817,
-    "nurseId": null,
-    "qualification": "CNA"
-  }
+    {
+        "id": 1,
+        "name": "shift 1",
+        "initDate": 1666471987318,
+        "endDate": 1666472022817,
+        "nurseId": 1,
+        "qualification": "CNA"
+    },
+    {
+        "id": 2,
+        "name": "shift 2",
+        "initDate": 1666471987318,
+        "endDate": 1666472022817,
+        "nurseId": 1,
+        "qualification": "RN"
+    },
+    {
+        "id": 3,
+        "name": "shift 3",
+        "initDate": 1666471987318,
+        "endDate": 1666472022817,
+        "nurseId": 2,
+        "qualification": "CNA"
+    }
 ]
